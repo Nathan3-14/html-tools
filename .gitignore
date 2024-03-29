@@ -2,3 +2,4 @@
 **/t--*
 **/s--*
 **/.mypy_cache
+.venv
