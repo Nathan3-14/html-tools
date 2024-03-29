@@ -4,5 +4,4 @@ from funcs import error
 
 def convert(hmtl_json: Dict[str, Any]):
     main = ET.Element("div")
-    error(["test!", "tset"])
 
