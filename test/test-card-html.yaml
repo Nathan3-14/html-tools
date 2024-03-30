@@ -1,0 +1,17 @@
+weather:
+    - h1:
+        __text: Weather
+    - img:
+        _src: images/200x100.png
+    - img:
+        _src: images/500x100.png
+    - p:
+        __text: Hi there! Here's the weather for you!
+    - div:
+        _id: today
+        children:
+            - h3:
+                _id: cool
+                __text: Today
+            - p:
+                __text: Yo!!
