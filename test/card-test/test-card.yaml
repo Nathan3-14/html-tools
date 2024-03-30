@@ -1,0 +1,12 @@
+weather:
+    - title: Weather
+      id: title
+    - image: images/200x100.png
+    - image: images/300x200.png
+      id: woods
+    - text: Hi there! Here's the weather for you!
+    - section:
+          - today
+          - subtitle: Today
+            id: cool
+          - text: Yo!!
