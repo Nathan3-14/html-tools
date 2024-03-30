@@ -1,0 +1,12 @@
+main:
+    - p:
+        _id: cool-text
+        __text: Cool!
+    - p:
+        _id: bye-text
+        __text: 'Bye! :('
+    - div:  
+        _id: nice-div
+        children:
+            - h1:
+                __text: Nice...
