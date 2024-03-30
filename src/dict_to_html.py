@@ -14,7 +14,6 @@ def convert_dict(html_dict: Dict[str, Any], parent: ET.Element) -> ET.Element:
     sub = ET.SubElement(parent, html_dict_key)
 
     for attrib_name, attrib_data in html_dict.items():
-        print(attrib_data)
         if attrib_name == "__text":
             sub.text = html_dict["__text"]
         elif attrib_name == "children":
@@ -22,7 +21,6 @@ def convert_dict(html_dict: Dict[str, Any], parent: ET.Element) -> ET.Element:
                 sub_2 = convert_dict(child, sub)
         elif re.match(single_underscore_regex, attrib_name):
             sub.set(attrib_name[1:], attrib_data)
-            print(f"_: {attrib_name}")
     return sub
 
 def convert(html_yml: Dict[str, Any]) -> ET.Element:
@@ -41,8 +39,6 @@ def convert(html_yml: Dict[str, Any]) -> ET.Element:
 
     for item in data:
         sub = convert_dict(item, main)
-
-
 
     open("temp/test.html", "wb").write(ET.tostring(main))
 
