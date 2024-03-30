@@ -10,4 +10,3 @@ main:
         children:
             - h1:
                 __text: Nice...
-
