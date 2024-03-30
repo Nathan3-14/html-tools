@@ -5,13 +5,15 @@ from .funcs import error
 import sys
 import yaml
 from rich.console import Console
+from xml.etree import ElementTree as ET
 
 console = Console()
 
 def main():
     sys_args = sys.argv[1:]
-    args: Dict[str, Any] = {
-        "path": str
+    args: Dict[str, Any] = { #? (optional, data type)
+        "input_path": str,
+        "output_path": str
     }
     arg_keys = list(args.keys())
 
@@ -38,5 +40,10 @@ def main():
             f"Incorrect argument supplied",
             f"Expected {expected_args} but recieved {recieved_args}"
         ])
-
-    convert(yaml.load(open(args["path"]).read(), yaml.BaseLoader))
+    
+    open(args["output_path"], "wb").write(
+        ET.tostring(convert(yaml.load(
+            open(args["input_path"]).read(),
+            yaml.BaseLoader)
+        ))
+    )

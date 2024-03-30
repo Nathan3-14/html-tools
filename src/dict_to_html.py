@@ -40,7 +40,7 @@ def convert(html_yml: Dict[str, Any]) -> ET.Element:
     for item in data:
         sub = convert_dict(item, main)
 
-    open("temp/test.html", "wb").write(ET.tostring(main))
+    # open("temp/test.html", "wb").write(ET.tostring(main))
 
     return main
 
